@@ -668,6 +668,7 @@ sap.ui.define([
 					if (this._sVessel.Tanks && this._sVessel.Tanks.length < 1) {
 						if (sap.ui.getCore().byId("btnVesselQtdeTanque").getText() === "0") {
 							sap.m.MessageToast.show(this.getResourceBundle().getText("infTanks"));
+							return;
 						}
 					}
 					this._sVessel.Action = "M";
