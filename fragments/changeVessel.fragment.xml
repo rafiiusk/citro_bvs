@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog contentWidth="100%" verticalScrolling="true">
+		<content>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="6" labelSpanS="6"
+				adjustLabelSpan="false" emptySpanXL="2" emptySpanL="2" emptySpanM="2" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+				<f:content>
+					<l:VerticalLayout id="msgChangeVessel" visible="false" class="sapUiContentPadding" width="100%"/>
+					<Label text="{i18n>Lockunlock}" labelFor="btnLockUnlock"/>
+					<Button id="btnLockUnlock" icon="{ path: 'BlockRec', formatter: '.formatter.lockUnlockIcon' }"
+						type="{ path: 'BlockRec', formatter: '.formatter.lockUnlockColor' }" tooltip="{ path: 'BlockRec', formatter: '.formatter.lockUnlockTip' }"
+						press="onLockUnlock"/>
+					<Label text="{i18n>Code}" required="true" labelFor="inpVesselCode"/>
+					<Input id="inpVesselCode" editable="{= ${Code} === true}" type="Text" maxLength="40" value="{CodEmbrc}"/>
+					
+					<Label text="{i18n>Name}" required="true" labelFor="inpVesselName"/>
+					<Input id="inpVesselName" type="Text" maxLength="60" value="{NomeEmbrc}"/>
+					
+					<Label text="{i18n>Priority}" required="true" labelFor="inpPriority"/>
+					<Input id="inpPriority" type="Text" maxLength="1" value="{Priority}"/>
+					
+					<Label text="{i18n>ViagemAtual}" required="true" labelFor="inpVesselViagemAtual"/>
+					<Input id="inpVesselViagemAtual" type="Number" maxLength="4" value="{Viagem}"/>
+					
+					<Label text="{i18n>AnoFab}" required="true" labelFor="dtVesselAnoFab"/>
+					<DatePicker id="dtVesselAnoFab" displayFormat="short" dateValue="{BUILT}"/>
+					
+					<Label text="{i18n>ServicoDesde}" required="true" labelFor="dtVesselIServicoDesde"/>
+					<DatePicker id="dtVesselIServicoDesde" displayFormat="short" dateValue="{DtInicoprac}"/>
+					
+					<Label text="{i18n>Email}" required="false" labelFor="inpVesselEmail"/>
+					<Input id="inpVesselEmail" type="Text" maxLength="35" value="{EmailEmbrc}"/>
+					
+					<Label text="{i18n>Fone}" required="false" labelFor="inpVesselFone"/>
+					<Input id="inpVesselFone" type="Number" maxLength="15" value="{Fone1Embrc}"/>
+					
+					<Label text="{i18n>Fax}" required="false" labelFor="inpVesselFax"/>
+					<Input id="inpVesselFax" type="Number" maxLength="15" value="{FaxEmbrc}"/>
+					
+					<Label text="{i18n>QtdeTanque}" required="true" labelFor="btnVesselQtdeTanque"/>
+					<Button id="btnVesselQtdeTanque" type="Emphasized" text="{ path: 'QtdeTanque', formatter: '.formatter.numberInt' }"
+						press="openTanksDialog"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button text="{i18n>cancel}" press="onCancelChangeVessel"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>save}" press="onConfirmChangeVessel"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

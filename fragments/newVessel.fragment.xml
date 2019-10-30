@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog id="dialogNewVessel" contentWidth="100%" verticalScrolling="true">
+		<content>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="6" labelSpanS="6"
+				adjustLabelSpan="false" emptySpanXL="2" emptySpanL="2" emptySpanM="2" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+				<f:content>
+					<l:VerticalLayout id="msgNewVessel" visible="false" class="sapUiContentPadding" width="100%"/>
+					<Label text="{i18n>Code}" required="true" labelFor="inpVesselCode"/>
+					<Input id="inpVesselCode"  type="Text" maxLength="40" liveChange="onLiveVesselCode"/>
+					
+					<Label text="{i18n>Name}" required="true" labelFor="inpVesselName"/>
+					<Input id="inpVesselName" type="Text" maxLength="60"/>
+					
+					<Label text="{i18n>Priority}" required="true" labelFor="inpPriority"/>
+					<Input id="inpPriority" type="Text" maxLength="1"/>
+					
+					<Label text="{i18n>ViagemAtual}" required="true" labelFor="inpVesselViagemAtual"/>
+					<Input id="inpVesselViagemAtual" type="Number" maxLength="4"/>
+					
+					<Label text="{i18n>AnoFab}" required="true" labelFor="dtVesselAnoFab"/> 
+					<DatePicker id="dtVesselAnoFab" displayFormat="short" />
+					
+					<Label text="{i18n>ServicoDesde}" required="true" labelFor="dtVesselIServicoDesde"/>
+					<DatePicker id="dtVesselIServicoDesde" displayFormat="short"/>
+					
+					<Label text="{i18n>Email}" required="false" labelFor="inpVesselEmail"/>
+					<Input id="inpVesselEmail" type="Text" maxLength="35"/>
+					
+					<Label text="{i18n>Fone}" required="false" labelFor="inpVesselFone"/>
+					<Input id="inpVesselFone" type="Number" maxLength="15"/>
+					
+					<Label text="{i18n>Fax}" required="false" labelFor="inpVesselFax"/>
+					<Input id="inpVesselFax" type="Number" maxLength="15" />
+					
+					<Label text="{i18n>QtdeTanque}" required="true" labelFor="btnVesselQtdeTanque"/>
+					<Button id="btnVesselQtdeTanque" type="Emphasized" text="{ path: 'QtdeTanque', formatter: '.formatter.numberInt' }"
+						press="openTanksDialog"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button text="{i18n>cancel}" press="onCancelNewVessel"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>save}" press="onConfirmNewVessel"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

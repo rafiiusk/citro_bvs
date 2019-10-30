@@ -1,0 +1,77 @@
+{
+    "resources": [
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/utils.js"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "i18n/i18n_pt.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "controller/Main.controller.js"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "fragments/newVessel.fragment.xml"
+        },
+        {
+            "name": "fragments/changeTanks.fragment.xml"
+        },
+        {
+            "name": "fragments/tanks.fragment.xml"
+        },
+        {
+            "name": "fragments/newTanks.fragment.xml"
+        },
+        {
+            "name": "fragments/changeVessel.fragment.xml"
+        },
+        {
+            "name": "fragments/shTimeZone.fragment.xml"
+        },
+        {
+            "name": "view/Main.view.xml"
+        }
+    ]
+}

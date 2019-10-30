@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		id="tanksDialog"
+		showHeader="true"
+		contentHeight="60%" contentWidth="80%">
+		<content>
+			<Table id="tanksTable" mode="{masterView>/tankSelectMode}" busy="{masterView>/busy}" busyIndicatorDelay="{masterView>/delay}"
+					noDataText="{masterView>/noDataText}" growingScrollToLoad="true" growing="true" growingThreshold="20" inset="false" 
+					items="{}"
+					updateFinished="onUpdateTableTanksFinished" itemPress="onTableItemTanksPressed">
+					<headerToolbar>
+						<OverflowToolbar>
+							<Title id="titleTanksTable" level="H2"/>
+							<ToolbarSpacer/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column hAlign="Left"><Text text="{i18n>CodEmbrc}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>Hatch}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>Tanque}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>Capacidade}"/></Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Active">
+							<cells>
+								<ObjectIdentifier title="{CodEmbrc}" text="{NomeEmbrc}"/>
+								<Text text="{Hatch}"/>
+								<Text text="{Tanque}"/>
+								<Text text="{Capacidade}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</content>
+		<beginButton>
+			<Button text="{i18n>cancel}" press="onCancelTanks"/>
+		</beginButton>
+		<endButton>
+			<Button visible="{masterView>/newTanksVisible}" text="{i18n>NewTank}" press="openNewTanksDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

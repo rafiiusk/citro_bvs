@@ -1,0 +1,69 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="br.citrosuco.tm.ZUI5_TM_VESSEL.controller.Main" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" id="mainPage" showNavButton="true">
+				<Table id="table" mode="SingleSelectMaster" busy="{masterView>/busy}" busyIndicatorDelay="{masterView>/delay}"
+					noDataText="{masterView>/noDataText}" growingScrollToLoad="true" growing="true" growingThreshold="20" inset="false" 
+					items="{/VesselSet}"
+					updateFinished="onUpdateTableVesselFinished" itemPress="onTableItemPressed">
+					<headerToolbar>
+						<OverflowToolbar>
+							<Title id="titleTable" level="H2"/>
+							<ToolbarSeparator/>
+							<SearchField width="40%" search="_VesselHandleValueHelpSearch">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="High"/>
+								</layoutData>
+							</SearchField>
+							<ToolbarSpacer/>
+							<!--<Button text="{i18n>New}" tooltip="{i18n>Add}" press="openNewVesselDialog"/>-->
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="10em" hAlign="Center"><Text text="{i18n>Lockunlock}"/></Column>
+						<Column hAlign="Left"><Text text="{i18n>Code}"/></Column>
+						<Column hAlign="Left"><Text text="{i18n>Name}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>Priority}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>AnoFab}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>ServicoDesde}"/></Column>
+						<Column hAlign="Left"><Text text="{i18n>Email}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>Fone}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>Fax}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>ViagemAtual}"/></Column>
+						<Column hAlign="Center"><Text text="{i18n>QtdeTanque}"/></Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Active">
+							<cells>
+								<Button icon="{ path: 'BlockRec', formatter: '.formatter.lockUnlockIcon' }"
+									type="{ path: 'BlockRec', formatter: '.formatter.lockUnlockColor' }" tooltip="{ path: 'BlockRec', formatter: '.formatter.lockUnlockTip' }"
+									press="onLockUnlock"/>
+								<Text text="{CodEmbrc}"/>
+								<Text text="{NomeEmbrc}"/>
+								<Text text="{Priority}"/>
+								<Text text="{ path: 'BUILT', formatter: '.formatter.dateExt' }"/>
+								<Text text="{ path: 'DtInicoprac', formatter: '.formatter.dateExt' }"/>
+								<Text text="{EmailEmbrc}"/>
+								<Text text="{Fone1Embrc}"/>
+								<Text text="{FaxEmbrc}"/>
+								<Text text="{Viagem}"/>
+								<Button class="sapUiTinyMargin" text="{ path: 'QtdeTanque', formatter: '.formatter.numberInt' }" press="openTanksDialog"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				<footer>
+					<Bar>
+						<contentLeft>
+							<!--<Button icon="sap-icon://key" tooltip="{i18n>Lockunlock}" press="onLockUnlock"/>-->
+						</contentLeft>
+						<contentRight>
+							<Button text="{i18n>New}" tooltip="{i18n>Add}" press="openNewVesselDialog"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		growingThreshold="20"
+		busy="{masterView>/busy}"
+		title="{i18n>TimeZone}"
+		class="sapUiPopupWithPadding"
+		items="{/ShTimezoneSet}"
+		search="_TimeZoneSHSearch"
+		confirm="_TimeZoneSHConfirm"
+		cancel="_TimeZoneSHCancel">
+		<StandardListItem
+			title="{Tzone}"
+			description="{Descript}" />
+	</SelectDialog>
+</core:FragmentDefinition>
